@@ -1,0 +1,11 @@
+tensorflow
+opencv-python
+pandas
+numpy
+matplotlib
+scikit-learn
+flask
+pillow
+librosa
+tqdm
+resampy
