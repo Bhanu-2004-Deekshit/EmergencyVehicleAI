@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>🔊 Acoustic Siren Detection</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="audio" required>
+        <button type="submit" class="btn">Analyze Audio</button>
+    </form>
+    {% if result %}
+        <div class="result-box">
+            <h2>Source: <span class="emergency">{{ result }}</span></h2>
+        </div>
+    {% endif %}
+{% endblock %}

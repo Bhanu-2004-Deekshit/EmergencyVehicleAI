@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="glass-card">
+    <h1>Smart City Dashboard</h1>
+    <p class="status-label" style="margin-bottom: 20px;">AI-Enabled Intelligent Transportation System</p>
+    
+    <div style="text-align: left; line-height: 1.8; color: #cbd5e1;">
+        <h3>The Challenge</h3>
+        <p>Rapid urban growth has crippled emergency vehicle response times. Traditional systems fail to distinguish life-saving vehicles from general traffic.</p>
+        
+        <h3>The AI Solution</h3>
+        <p>This project uses a <strong>Multi-Modal CNN Approach</strong>:</p>
+        <ul style="color: #38bdf8;">
+            <li><strong>Visual Intelligence:</strong> CNN recognizes sirens, decals, and vehicle types.</li>
+            <li><strong>Acoustic Intelligence:</strong> Frequency analysis detects sirens in low-visibility.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-top: 30px;">
+        <a href="{{ url_for('video_detector') }}" class="btn-primary" style="text-decoration: none; display: inline-block;">Explore Visual AI</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City AI | Emergency Response</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <a href="{{ url_for('about') }}">About Project</a>
+        <a href="{{ url_for('video_detector') }}">Video Detector</a>
+        <a href="{{ url_for('audio_detector') }}">Audio Detector</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px; padding-bottom: 20px; color: #475569; font-size: 0.9rem;">
+        <p>&copy; 2026 AI-Enabled Intelligent Transportation System</p>
+        <p style="font-size: 0.7rem;">Emergency Vehicle Path Optimization Project</p>
+    </footer>
+
+</body>
+</html>

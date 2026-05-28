@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="glass-card">
+    <h1>📹 Visual Recognition</h1>
+    <p class="status-label">Upload a camera frame from an intersection to detect emergency vehicles.</p>
+
+    <form method="POST" enctype="multipart/form-data" style="margin: 30px 0;">
+        <div style="margin-bottom: 20px;">
+            <input type="file" name="image" accept="image/*" required id="video-upload">
+        </div>
+        <button type="submit" class="btn-primary">START ANALYSIS</button>
+    </form>
+
+    {% if result %}
+    <div class="result-display {% if 'EMERGENCY' in result %}emergency-alert{% endif %}">
+        
+        <div style="margin-bottom: 20px;">
+            <p class="status-label">LATEST FEED FRAME:</p>
+            <img src="{{ url_for('static', filename='current_v.jpg') }}" 
+                 alt="Processed Frame" 
+                 style="width: 100%; max-width: 400px; border-radius: 12px; border: 2px solid #334155;">
+        </div>
+
+        <span class="status-label">DETECTION STATUS:</span>
+        <span class="status-value">{{ result }}</span>
+        
+        <div style="margin-top: 20px; font-weight: 800; letter-spacing: 1px; color: {{ '#fb7185' if 'EMERGENCY' in result else '#38bdf8' }}">
+            {% if 'EMERGENCY' in result %}
+                🚨 TRAFFIC SIGNAL: OVERRIDE TO GREEN (EMERGENCY PATH)
+            {% else %}
+                🟢 TRAFFIC SIGNAL: NORMAL OPERATION
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

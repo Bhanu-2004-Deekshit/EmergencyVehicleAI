@@ -1,0 +1,123 @@
+/* static/style.css */
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --accent-blue: #38bdf8;
+    --accent-red: #fb7185;
+    --text-slate: #94a3b8;
+    --text-white: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: var(--text-slate);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+}
+
+/* Containers */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cards & Sections */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Forms & Buttons */
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    color: var(--text-slate);
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #7dd3fc;
+}
+
+/* Result Displays */
+.result-display {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.emergency-alert {
+    border-left: 5px solid var(--accent-red);
+    background: rgba(251, 113, 133, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(251, 113, 133, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(251, 113, 133, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(251, 113, 133, 0); }
+}
+
+.status-label {
+    font-size: 1.2rem;
+    color: var(--text-slate);
+}
+
+.status-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    display: block;
+}
